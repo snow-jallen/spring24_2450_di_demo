@@ -1,0 +1,17 @@
+﻿@page "/"
+@inject IGreeter greeter
+
+<PageTitle>Page Title Goes Here</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<p>@greeting</p>
+
+@code {
+    string? greeting;
+
+    protected override void OnInitialized()
+    {
+        greeting = $"{greeter.InformalGreeting()} (at {DateTime.Now})";
+    }
+}
